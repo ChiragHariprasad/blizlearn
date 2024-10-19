@@ -1,0 +1,21 @@
+<ActionBar title="Global Chat"></ActionBar>
+
+<GridLayout rows="*, auto">
+  <ListView [items]="messages" row="0">
+    <ng-template let-message="item">
+      <GridLayout columns="auto, *" class="p-2">
+        <Image [src]="message.imageUrl || 'https://example.com/default-avatar.png'" class="w-10 h-10 rounded-full" col="0"></Image>
+        <StackLayout col="1" class="ml-2">
+          <Label [text]="message.username" class="font-bold"></Label>
+          <Label [text]="message.message" textWrap="true"></Label>
+          <Label [text]="message.timestamp | date:'short'" class="text-xs text-gray-500"></Label>
+        </StackLayout>
+      </GridLayout>
+    </ng-template>
+  </ListView>
+
+  <GridLayout rows="auto" columns="*, auto" row="1" class="p-2">
+    <TextField [(ngModel)]="newMessage" hint="Type a message..." col="0"></TextField>
+    <Button text="Send" (tap)="sendMessage()" col="1"></Button>
+  </GridLayout>
+</GridLayout>
