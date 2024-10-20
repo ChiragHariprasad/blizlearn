@@ -1,0 +1,7 @@
+<GridLayout rows="*, auto">
+  <page-router-outlet row="0"></page-router-outlet>
+  <StackLayout row="1" orientation="horizontal" class="bg-gray-200 p-2">
+    <Button text="Courses" [nsRouterLink]="['/courses']" class="w-1/2 text-center"></Button>
+    <Button text="Chat" [nsRouterLink]="['/chat']" class="w-1/2 text-center"></Button>
+  </StackLayout>
+</GridLayout>
