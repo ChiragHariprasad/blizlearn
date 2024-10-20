@@ -1,0 +1,11 @@
+<ActionBar [title]="course?.title"></ActionBar>
+
+<ScrollView>
+  <StackLayout class="p-4">
+    <Image [src]="course?.imageUrl" class="w-full h-64 rounded-lg"></Image>
+    <Label [text]="course?.description" class="text-lg font-bold my-4" textWrap="true"></Label>
+    <VideoPlayer [src]="course?.videoUrl" autoplay="false" height="300"></VideoPlayer>
+    <Label [text]="course?.textContent" class="my-4" textWrap="true"></Label>
+    <WebView [src]="course?.interactiveContent" height="300"></WebView>
+  </StackLayout>
+</ScrollView>
